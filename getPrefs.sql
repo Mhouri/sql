@@ -1,0 +1,43 @@
+--*****************************************************************************
+-- Name   : get_prefs
+-- Date   : October 2018
+-- Author : Mohamed Houri
+-- Purpose: gets the value of dbms_stats preference at global or table level
+--          
+--          
+-- Input arguments:
+--   pname   - preference name
+--             The default value for following preferences can be retrieved.
+--                CASCADE
+--                DEGREE
+--                ESTIMATE_PERCENT
+--                METHOD_OPT
+--                NO_INVALIDATE
+--                GRANULARITY
+--                PUBLISH
+--                INCREMENTAL
+--                INCREMENTAL_LEVEL
+--                INCREMENTAL_STALENESS
+--                GLOBAL_TEMP_TABLE_STATS
+--                STALE_PERCENT
+--                AUTOSTATS_TARGET
+--                CONCURRENT
+--                TABLE_CACHED_BLOCKS
+--                OPTIONS
+--                STAT_CATEGORY
+--                PREFERENCE_OVERRIDES_PARAMETER
+--                APPROXIMATE_NDV_ALGORITHM
+--                AUTO_STAT_EXTENSIONS
+--                WAIT_TIME_TO_UPDATE_STATS
+--
+--
+--   ownname - owner name
+--   tabname - table name
+--
+--
+-- Exceptions:
+--   ORA-20001: Invalid input values
+--
+--**************************************************************************
+
+select dbms_stats.get_prefs('&preference', tabname => '&tablename') prefs from dual;
